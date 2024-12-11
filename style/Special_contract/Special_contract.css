@@ -1,0 +1,54 @@
+#contract_store {
+  width: 100%;
+}
+#contract_store .store {
+  max-width: 800px;
+  width: 90%;
+  margin: 3rem 0;
+  left: 50%;
+  display: flex;
+  transform: translateX(-50%);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0px #a6e7ff;
+  transition: all 0.4s;
+  overflow: hidden;
+}
+#contract_store .store:hover {
+  box-shadow: 0 0 25px #a6e7ff;
+}
+#contract_store .store .name {
+  text-align: center;
+  margin-top: 20px;
+}
+#contract_store .store .store_info {
+  width: 100%;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+}
+#contract_store .store .store_info h4 {
+  text-align: center;
+  color: #1b85ac;
+  font-weight: bolder;
+}
+#contract_store .store .store_info h4 span {
+  white-space: nowrap;
+  font-size: 1.5em;
+}
+#contract_store .store .store_info p {
+  margin-top: 1.5rem;
+  color: #000000;
+  text-align: center;
+  font-size: 1.2em;
+}
+#contract_store .store .store_info svg {
+  width: 250px;
+  height: 230px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#contract_store .store .store_info svg .svg_hover_float_up {
+  transition: transform 0.4s;
+}
+#contract_store .store .store_info svg .svg_hover_float_up:hover {
+  transform: translateY(-15px);
+}/*# sourceMappingURL=Special_contract.css.map */

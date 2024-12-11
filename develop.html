@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index/index.css">
+    <link rel="stylesheet" href="./style/devlop/devlop.css">
+    <title>組織運作-社團發展計畫</title>
+</head>
+<body>
+
+    <canvas id="animation_bg" width="1920" height="1080"></canvas>
+    
+    <nav>
+        <div class="logo"><img src="./img/Logo1.svg" alt="Logo"></div>
+        <div class="logo"><img src="./img/Logo1.svg" alt="Logo" title="資管系學會"></div>
+        <ul>
+            <a href="index.html"><li>首頁</li></a>
+            <a href="Commonality.html"><li>共通性</li>
+            <a href="activity.html"><li>社團活動</li></a>
+        </ul>
+        <div id="side_menu_btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+    <!-- <aside id="side_contents">
+        <div id="side_contents_arrow">></div>
+        <ul>
+            <li><a href="#short"><span>短期</span></a></li>
+            <li><a href="#medle"><span>中期</span></a></li>
+            <li><a href="#long">長期<span>
+            </span></a></li>
+        </ul>
+    </aside> -->
+    <aside id="side_menu" style="left: 100vw;">
+        <h2>選單</h2>
+        <ul>
+            <a href="Commonality.html"><li>共通性</li></a>
+                <a class="sub_item" href="Commonality_content.html"><li>組織運作</li></a>
+                <a class="sub_item" href="re_man.html"><li>組織管理</li></a>
+            <hr>
+            <a href="activity.html"><li>社團活動</li></a>
+                <a class="sub_item" href="plan.html"><li>規劃與執行</li></a>
+                <a class="sub_item" href="feature.html"><li>特色與績效</li></a>
+        </ul>
+    </aside>
+
+    <main>
+        <h2>社團發展計畫</h2>
+
+        <section id="short">
+           <div class="d_pic">
+                <img src="./img/短期.svg "alt="">
+           </div>
+           <div class="d_p">
+               <p>
+                    目標:<br>
+                    1. 透過舉辦大小活動，以促進本系同學之間的交流與互動。<br>
+                    2. 增加系會幹部們對社團的歸屬感以及認同感<br>
+                    3. 讓較少辦理活動經驗的幹部能夠快速順利上手<br>
+                    4. 讓系會幹部能夠認知自己的定位與工作職責<br>
+                    具體實施:<br>
+                    1.	辦理迎新宿營、茶會、抽直屬、特色週等活動<br>
+                    2.	不定時的聚會<br>
+                    3.	訂定辦理活動SOP<br>
+                    4.	透過章程明確傳達各幹部執掌
+                </p>
+           </div>
+        </section>
+
+        <section id="medle">
+            
+            <div class="d_p">
+                <p>
+                    目標:<br>
+                    1. 透過活動建立與其他系的聯繫<br>
+                    2.	落實活動SOP以確保未來各活動的流程效率與品質<br>
+                    3.	增強系會成員的規劃、領導與決策等能力，並促進本系會成員之間的默契<br>
+                    具體實施:<br>
+                    1.	各活動積極尋找合作系且認真對待活動事項，給其他系留下好且深刻的印象<br>
+                    2.	公開活動SOP，在活動籌備中達到人人監督並於每次活動結束後進行檢討與反思，逐步提高活動品質<br>
+                    3.	將各活動的執行人平均合理的分配
+                </p>
+            </div>
+
+            <div class="d_pic">
+                <img src="./img/中期.svg" alt="">
+            </div>
+
+        </section>
+
+        <section id="long">
+            <div class="d_pic">
+                <img src="./img/長期.svg" alt="">
+            </div>
+            <div class="d_p"> 
+                <p>
+                    目標:<br>
+                    1.	傳達好玩與安全並列第一的理念<br>
+                    2.	宣揚、表現資管的熱情與責任感，提高未來系會的知名度 <br>
+                    3.	增加學長姊與學弟妹的連結性，並減少彼此的距離感<br>
+                    具體實施:<br>
+                    1.	依據一年來的經驗與反饋，做規劃與調整，並確保制度有效的傳承下去<br>
+                    2.  在一年中積極做出良好的口碑與形象。<br>
+                    3.  辦理交接，上任前不定時與學弟妹們互動，以增加整系的連結性
+                </p>
+            </div>
+        </section>
+        
+    </main>
+
+    <div id="bread_crumbs">
+        <a href="index.html"><div>首頁</div></a>
+        <a href="Commonality.html"><div>共通性</div></a>
+        <a href="Commonality_content.html"><div>組織運作</div></a>
+        <a href="develop.html" class="current_bread_crumb"><div>社團發展計畫</div></a>
+    </div>
+
+</body>
+<script defer src="./js/sideContents.js"></script>
+<script defer src="./js/sideMenu.js"></script>
+<script src="./js/bg_animation.js"></script>
+</html>

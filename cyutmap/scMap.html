@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/index/index.css">
+    <style>
+        *{margin: 0; box-sizing: border-box;}
+        input{outline: none; height: 30px; line-height: 30px; padding-left: 5px;}
+        button{
+            width: 80px;
+            height: 40px;
+            background-color: rgb(7, 99, 156);
+            transition: all .4s;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover{background-color: rgb(28, 157, 237);}
+        input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {-webkit-appearance: none;}
+        .main{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .control_panel{
+            width: 20%;
+            height: 100vh;
+            background-color: rgb(209, 209, 209);
+        }
+        .control_buttons{
+            /* margin-top: 15px;
+            display: flex;
+            justify-content: center; */
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #start_button{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #watching{
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+        .info{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+        .info>div{width: 55%;display: flex;justify-content: center;}
+        /*--------------------------------------------*/
+        #map{
+            width: 80%;
+            height: 100vh;
+            overflow-x: hidden;
+            background-color: #8ba08e;
+            position: relative;
+            user-select: none;
+        }
+        #map::-webkit-scrollbar{display: none;}
+        #map_wrap{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform: rotate(-202deg);
+            top: 30%;
+            left: 12.5%;
+        }
+        #myMap{
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        @keyframes enlarge{
+            0%{
+                width: 100%;
+                height: 100%;
+                opacity: 0.5;
+            }
+            100%{
+                width: 500%;
+                height: 500%;
+                opacity: 0;
+            }
+        }
+        #me{
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgb(67, 5, 5);
+            background: #fff700;
+            position: absolute;
+            border-radius: 50%;
+            top: -20px;
+            left: -20px;
+        }
+        #me_bg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff700;
+            animation: enlarge 1s infinite ease-in-out;
+        }
+        #target_point{
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgb(5, 45, 67);
+            background: rgb(4, 126, 219);
+            position: absolute;
+            border-radius: 50%;
+            top: -20px;
+            left: -20px;
+            filter: blur(0px);
+            transition: all .4s;
+        }
+        #target_point_bg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(18, 79, 125);
+            animation: enlarge 1s infinite ease-in-out;
+        }
+    </style>
+    <style>
+        @media screen and (max-width: 980px) {
+            input{outline: none; height: 25px; line-height: 25px; padding-left: 5px;}
+            button{
+                width: 120px;
+                height: 60px;
+                line-height: 60px;
+                font-size: 1.2em;
+                letter-spacing: 0.15em;
+            }
+            .control_panel{
+                width: 100%;
+                height: 150px;
+                position: fixed;
+                bottom: 0;
+            }
+            /*--------------------------------------------*/
+            #map{
+                width: 100%;
+                height: 100vh;
+                overflow: hidden;
+            }
+            #map_wrap{
+                width: 100%;
+                height: 100%;
+                top: -40%;
+                left: -10%;
+            }
+            #myMap{
+                width: 100%;
+                height: auto;
+            }
+            #me{
+                width: 10px;
+                height: 10px;
+                top: -10px;
+                left: -10px;
+            }
+            #target_point{
+                width: 10px;
+                height: 10px;
+                top: -10px;
+                left: -10px;
+            }
+        }
+    </style>
+    <title>CYUT - Map</title>
+</head>
+<body>
+    <div class="main">
+        <div id="map">
+            <div id="map_wrap">
+                <img id="myMap" src="./map.svg"/>
+                <div id="me"><div id="me_bg"></div></div>
+                <div id="target_point"><div id="target_point_bg"></div></div>
+            </div>
+        </div>
+        <div class="control_panel">
+            <!-- <div class="develop">
+                <style>
+                    .develop{
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+                    .develop > h1 {width: 100%; text-align: center;padding-top: 15px;}
+                    .develop > div{
+                        width: 40%;
+                        margin-top: 30px;
+                        padding: 10px;
+                        margin-left: 15px;
+                        background-color: #fff;
+                    }
+                    .develop > div > div{padding-left: 5%; margin: 10px 0;}
+                    .develop input{width: 90%;}
+                </style>
+                <h1>Develop</h1>
+                <div>
+                    <div><span>start_lat: </span><input id="start_lat" type="number" value="24.066148"></div>
+                    <div><span>start_lng: </span><input id="start_lng" type="number" value="120.716939"></div>
+                </div>
+                <div>
+                    <div><span>end_lat: </span><input id="end_lat" type="number" value="24.072013"></div>
+                    <div><span>end_lng: </span><input id="end_lng" type="number" value="120.713777"></div>
+                </div>
+                <div>
+                    <div><span>my_lat:</span><input id="my_lat" type="number" value="24.067816"></div>
+                    <div><span>my_lng:</span><input id="my_lng" type="number" value="120.714023"></div>
+                </div>
+                <div>
+                    <div><span>target_lat:</span><input id="target_lat" type="number" value="24.068400"></div>
+                    <div><span>target_lng:</span><input id="target_lng" type="number" value="120.714274"></div>
+                </div>
+            </div> -->
+            <!-- <div class="info">
+                <div><span id="distance_value"></span></div>
+                <div> <input id="test_lat" type="number" value="24.067827"></div>
+                <div> <input id="test_lng" type="number" value="120.714011"></div>
+            </div> -->
+            <div class="control_buttons">
+                <button id="start_button">開始</button>
+                <h1 id="watching" style="display: none;">正在取得位置...</h1>
+            </div>
+        </div>
+    </div>
+    <div id="bread_crumbs">
+        <a href="../index.html"><div>首頁</div></a>
+        <a href="../Commonality.html"><div>共通性</div></a>
+        <a href="../re_man.html"><div>組織管理</div></a>
+        <a href="../Special_contract.html"><div>資源管理</div></a>
+        <a href="scMap.html" class="current_bread_crumb"><div>校園地圖</div></a>
+    </div>
+</body>
+<script>
+let mapData = [
+    {
+        mapURL: 'map.svg',
+        startPos: {lat: 24.071274, lng: 120.711727},
+        endPos: {lat: 24.066935, lng: 120.717038},
+        myPos: {lat: 24.067827, lng: 120.714011},
+        targetPos: {lat: 24.068736, lng: 120.714541}
+    }
+]
+let displayMap = 0; //載入 mapData 的第0筆資料 
+
+window.onload = function(){
+    document.getElementById('start_button').addEventListener('click', () => {
+        navigator.geolocation.watchPosition(successCallback, errorCallback, optionsObject);
+        // successCallback();//------------
+    });
+
+    const distance_value = document.getElementById('distance_value');
+    const me = document.getElementById('me');
+    const tatgetPoint = document.getElementById('target_point');
+    const myMap = document.getElementById('myMap');
+    let myMapWidth = myMap.clientWidth;
+    let myMapHeight = myMap.clientHeight;
+    const map_wrap = document.getElementById('map_wrap');
+
+    // loadMap(displayMap);
+
+    // function loadMap(i){
+    //     me.style = `top: -20px;left: -20px;`;
+    //     tatgetPoint.style = `top: -20px;left: -20px;`;
+
+    //     document.getElementById('start_lat').value = mapData[i].startPos.lat;
+    //     document.getElementById('start_lng').value = mapData[i].startPos.lng;
+
+    //     document.getElementById('end_lat').value = mapData[i].endPos.lat;
+    //     document.getElementById('end_lng').value = mapData[i].endPos.lng;
+
+    //     document.getElementById('my_lat').value = mapData[i].myPos.lat;
+    //     document.getElementById('my_lng').value = mapData[i].myPos.lng;
+
+    //     document.getElementById('target_lat').value = mapData[i].targetPos.lat;
+    //     document.getElementById('target_lng').value = mapData[i].targetPos.lng;
+
+    //     document.getElementById('map').src = `./${mapData[i].mapURL}`;
+    // }
+    let startPos =  {lat: '', lng: ''};
+    let endPos =    {lat: '', lng: ''};
+    let myPos =     {lat: '', lng: ''};
+    let targetPos = {lat: '', lng: ''};
+
+    function successCallback(position) { 
+        document.getElementById('start_button').style.display = 'none';
+        document.getElementById('watching').style.display = 'block';
+
+        myPos.lat = position.coords.latitude; //------------------------------------------------------------------
+        myPos.lng = position.coords.longitude; //------------------------------------------------------------------
+
+        if(myPos.lat > mapData[0].startPos.lat){myPos.lat = mapData[0].startPos.lat;alert('你不在地圖的範圍內!')}
+        if(myPos.lat < mapData[0].endPos.lat){myPos.lat = mapData[0].endPos.lat;alert('你不在地圖的範圍內!')}
+        if(myPos.lng < mapData[0].startPos.lng){myPos.lng = mapData[0].startPos.lng;alert('你不在地圖的範圍內!')}
+        if(myPos.lng > mapData[0].endPos.lng){myPos.lng = mapData[0].endPos.lng;alert('你不在地圖的範圍內!')}
+        // myPos.lat = document.getElementById('my_lat').value;
+        // myPos.lng = document.getElementById('my_lng').value;
+        // myPos.lat = mapData[0].myPos.lat;
+        // myPos.lng = mapData[0].myPos.lng;
+
+        // startPos.lat = document.getElementById('start_lat').value;
+        // startPos.lng = document.getElementById('start_lng').value;
+        startPos.lat = mapData[0].startPos.lat;
+        startPos.lng = mapData[0].startPos.lng;
+
+        // endPos.lat = document.getElementById('end_lat').value;
+        // endPos.lng = document.getElementById('end_lng').value;
+        endPos.lat = mapData[0].endPos.lat;
+        endPos.lng = mapData[0].endPos.lng;
+
+        // targetPos.lat = document.getElementById('target_lat').value;
+        // targetPos.lng = document.getElementById('target_lng').value;
+        // targetPos.lat = mapData[0].targetPos.lat;
+        // targetPos.lng = mapData[0].targetPos.lng;
+        // targetPos.lat = document.getElementById('test_lat').value;
+        // targetPos.lng = document.getElementById('test_lng').value;
+
+        calcPosition(myPos, startPos); // 計算座標並標出點的位置
+        // getDistance(myPos, targetPos); // 計算距離-------------------------------------
+    };
+
+    function errorCallback(err) {
+        alert("暫時無法取得所在位置，請稍後再試");
+        console.log(err);
+        document.getElementById('start_button').style.display = 'block';
+        document.getElementById('watching').style.display = 'none';
+    }
+
+    const optionsObject = {
+        enableHighAccuracy: true, //是否以最高精準度來取得座標位置 (預設 false
+        timeout: 5000, // 必須要在多少時間內回應位置資訊 (預設 Infinity
+        maximumAge: 1000, // 多久更新一次 (預設 0
+    }
+
+    function calcPosition(myPos, startPos){
+
+        let map_lat_len = Math.abs(Math.round((Number(startPos.lat) - Number(endPos.lat)) * 1000000));
+        let map_lng_len = Math.abs(Math.round((Number(startPos.lng) - Number(endPos.lng)) * 1000000));
+
+        myMapWidth = myMap.clientWidth;
+        myMapHeight = myMap.clientHeight;
+
+        let myLatInMap_percen = Math.round((Math.abs(Math.round((Number(myPos.lat) - Number(startPos.lat)) * 1000000)) / map_lat_len * 100) * 100) / 100;
+        let myLngInMap_percen = Math.round((Math.abs(Math.round((Number(myPos.lng) - Number(startPos.lng)) * 1000000)) / map_lng_len * 100) * 100) / 100;
+        me.style = `
+            top: ${myMapHeight / 100 * myLatInMap_percen}px;
+            left: ${myMapWidth / 100 * myLngInMap_percen}px;
+        `;
+
+        // let targetLatInMap_percen = Math.round((Math.abs(Math.round((Number(targetPos.lat) - Number(startPos.lat)) * 1000000)) / map_lat_len * 100) * 100) / 100;
+        // let targetLngInMap_percen = Math.round((Math.abs(Math.round((Number(targetPos.lng) - Number(startPos.lng)) * 1000000)) / map_lng_len * 100) * 100) / 100;
+        // tatgetPoint.style = `
+        //     top: ${myMapHeight / 100 * targetLatInMap_percen}px;
+        //     left: ${myMapWidth / 100 * targetLngInMap_percen}px;
+        // `;
+    }
+
+    function getDistance(myPos, targetPos){ 
+
+        let redLat1 = myPos.lat * Math.PI / 180.00;
+        let redLat2 = targetPos.lat * Math.PI / 180.00;
+        let redLat_deviation = redLat1 - redLat2;
+
+        let redLng1 = myPos.lng * Math.PI / 180.00;
+        let redLng2 = targetPos.lng * Math.PI / 180.00;
+        let redLng_deviation = redLng1 - redLng2;
+
+        let s = 2 * Math.asin(
+            Math.sqrt(
+                Math.pow(
+                    Math.sin(redLat_deviation / 2), 2) + 
+                    Math.cos(redLat1) * 
+                    Math.cos(redLat2) * 
+                    Math.pow(Math.sin(redLng_deviation / 2)
+                ,2)
+            )
+        );
+        
+        s *= 6378.137;
+        s = Math.round(s * 1000) / 1000;
+        distance_value.innerHTML = `距離: ${s * 1000} 公尺`;
+    }
+}
+
+</script>
+</html>

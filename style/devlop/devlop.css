@@ -1,0 +1,62 @@
+#short, #medle, #long {
+  width: 80VW;
+  height: auto;
+  display: flex;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#short .d_pic, #medle .d_pic, #long .d_pic {
+  width: 40%;
+}
+#short .d_pic img, #medle .d_pic img, #long .d_pic img {
+  width: 50%;
+  max-width: 300px;
+  min-width: 200px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#short .d_p, #medle .d_p, #long .d_p {
+  width: 60%;
+  padding: 0 5%;
+  border-left: 1px solid #ccc;
+}
+#short .d_p p, #medle .d_p p, #long .d_p p {
+  font-size: 1.2em;
+  margin: 30 10px;
+}
+#short#medle .d_p, #medle#medle .d_p, #long#medle .d_p {
+  border: 0;
+  border-right: 1px solid #ccc;
+}
+
+@media screen and (max-width: 1000px) {
+  #short, #medle, #long {
+    width: 90%;
+    flex-wrap: wrap;
+  }
+  #short .d_pic, #medle .d_pic, #long .d_pic {
+    width: 100%;
+  }
+  #short#short .d_p, #short#medle .d_p, #short#long .d_p, #medle#short .d_p, #medle#medle .d_p, #medle#long .d_p, #long#short .d_p, #long#medle .d_p, #long#long .d_p {
+    width: 100%;
+    border: 0;
+  }
+  #short#medle .d_pic, #medle#medle .d_pic, #long#medle .d_pic {
+    order: 1;
+  }
+  #short#medle .d_p, #medle#medle .d_p, #long#medle .d_p {
+    order: 2;
+  }
+}
+@media screen and (max-width: 700px) {
+  #short .d_p, #medle .d_p, #long .d_p {
+    font-size: 0.8rem;
+  }
+}/*# sourceMappingURL=devlop.css.map */

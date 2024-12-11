@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index/index.css">
+    <link rel="stylesheet" href="./style/y_activty/y_activty.css">
+    <title>共通性-年度活動計畫</title>
+</head>
+<body>
+
+    <canvas id="animation_bg" width="1920" height="1080"></canvas>
+
+    <nav>
+        <div class="logo"><img src="./img/Logo1.svg" alt="Logo"></div>
+        <div class="logo"><img src="./img/Logo1.svg" alt="Logo" title="資管系學會"></div>
+        <ul>
+            <a href="index.html"><li>首頁</li></a>
+            <a href="Commonality.html"><li>共通性</li>
+            <a href="activity.html"><li>社團活動</li></a>
+        </ul>
+        <div id="side_menu_btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+    <aside id="side_menu" style="left: 100vw;">
+        <h2>選單</h2>
+        <ul>
+            <a href="Commonality.html"><li>共通性</li></a>
+                <a class="sub_item" href="Commonality_content.html"><li>組織運作</li></a>
+                <a class="sub_item" href="re_man.html"><li>組織管理</li></a>
+            <hr>
+            <a href="activity.html"><li>社團活動</li></a>
+                <a class="sub_item" href="plan.html"><li>規劃與執行</li></a>
+                <a class="sub_item" href="feature.html"><li>特色與績效</li></a>
+        </ul>
+    </aside>
+
+    <main class="y_activty_main">
+
+        <h2>年度活動計畫</h2>
+
+        <section class="first_timeline_block y_activty_events" >
+
+            <h3 class="spring_semester_heading">111年度第一學期</h3>
+
+            <div class="event ev1">
+                <h4>茶會 + 抽直屬</h4>
+                <span>2022/09/12~2022/09/16</span>
+            </div>
+
+            <div class="event ev2">
+                <h4>制服趴</h4>
+                <span>2022/10/02-2022/10/16</span>
+            </div>
+
+            <div class="event ev3">
+                <h4>宿營</h4>
+                <span>2022/10/22~2022/10/23</span>
+            </div>
+
+            <div class="event ev4">
+                <h4>耶誕晚會</h4>
+                <span>2022/12/18~2022/12/24</span>
+            </div>
+
+            <div class="semester_end"></div>
+
+        </section>
+
+        <section class="second_timeline_block y_activty_events">
+
+            <h3 class="fall_semester_heading">111年度第二學期</h3>
+
+            <div class="event ev5">
+                <h4>資管週</h4>
+                <span>112/3月初</span>
+            </div>
+            <div class="event ev10">
+                <h4>期末演唱會</h4>
+                <span>2023/05/14~2023/05/20</span>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="bread_crumbs">
+        <a href="index.html"><div>首頁</div></a>
+        <a href="Commonality.html"><div>共通性</div></a>
+        <a href="Commonality_content.html"><div>組織運作</div></a>
+        <a href="y_activty.html" class="current_bread_crumb"><div>年度活動計畫</div></a>
+    </div>
+
+</body>
+<script defer src="./js/sideMenu.js"></script>
+<script src="./js/bg_animation.js"></script>
+</html>

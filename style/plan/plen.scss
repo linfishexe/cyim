@@ -1,0 +1,261 @@
+.coding{
+    width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff !important; 
+    color: #000;
+    padding: 2rem 0;
+    margin-bottom: 20vh;
+    p {
+        font-size: 1.5em;
+        text-align: center;
+    }
+    .coding_ex{
+        
+        span {
+            font-size: 3em;
+            &:nth-child(1){
+                color: red;
+            }
+            &:nth-child(2){
+                color: rgb(15, 15, 172);
+            }
+            &:nth-child(3){
+                color: rgb(115, 215, 255);
+            }
+            &:nth-child(4){
+                color: rgb(48, 97, 38);
+            }
+            &:nth-child(5){
+                color: rgb(86, 177, 68);
+            }
+        }
+    }
+    .coding_detial {
+        table {
+            border: 0;
+            margin: 0;
+            tr {
+                td {
+                    border: 0;
+                    &:nth-child(1) {
+                        div {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+
+                &:nth-child(1){
+                    td:nth-child(1) {
+                        div {
+                            background-color: red;
+                        }
+                    }
+                }
+
+                &:nth-child(2){
+                    div {
+                        background-color: rgb(15, 15, 172);
+                    }
+                }
+
+                &:nth-child(3){
+                    div {
+                        background-color: rgb(115, 215, 255);
+                    }
+                }
+                &:nth-child(4){
+                    div {
+                        background-color: rgb(48, 97, 38);
+                    }
+                }
+                &:nth-child(5){
+                    div {
+                        background-color: rgb(86, 177, 68);
+                    }
+                }
+
+            }
+        }
+    } 
+}
+
+.timeline{
+    position: fixed;
+    top: 80px;
+    width: 3px;
+    height: calc(100vh - 80px);
+    background-color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+main {
+    h2 {
+        &.bg_h2 {
+            width: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.semester {
+    .events {
+        div{
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: .5rem;
+            left: 50%;
+            transition: box-shadow .4s;
+            &:hover{ box-shadow: 0 0 40px rgb(88, 195, 241); }
+            margin: 3rem 0;
+            background-color: #22222d;
+
+            h3 {
+                margin-bottom: 5px;
+            }
+
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                
+                img{
+                    width: 40px;
+                }
+                article {
+                    margin-top: 1rem;
+                    width: 100%;
+                    h3 {
+                        font-size: 1rem;
+                        line-height: 2rem;
+                    }
+                }
+            }
+
+            &::after {
+                content: attr(data-time);
+                position: absolute;
+                left: 50%;
+                top: -1.5rem;
+                transform: translateX(-50%);
+            }
+        }
+        
+        .left {
+            transform: translateX(calc(-100% - 60px));
+                &::before {
+                    content: '';
+                    width: 55px;
+                    height: 3px;
+                    background-color: #ccc;
+                    position: absolute;
+                    right: -55px;
+                    top: 50%;
+                }
+        }
+        .right {
+            transform: translateX(calc(60px));
+            &::before {
+                content: '';
+                width: 65px;
+                height: 3px;
+                background-color: #ccc;
+                position: absolute;
+                left: -65px;
+                top: 50%;
+            }
+        }
+        
+    }
+}
+.plan_frist{
+    text-align: center;
+    margin: 60px 0;
+    font-size: 2em;
+}
+
+.browse_toggle_btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    border: 1px solid #cccccc2f;
+    border-radius: 50px;
+    background-color: #23232d;
+    display: flex;
+    animation: breathe 1s ease-in-out infinite alternate-reverse;
+
+    div {
+        width: 200px;
+        height: 20px;
+        padding: 20px;
+        background-color: #00e1ff;
+        color: #22222d;
+        white-space: nowrap;
+        margin: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color .4s;
+        user-select: none;
+        &:hover{
+            background-color: #44c6d7;
+        }
+    }
+}
+
+@keyframes breathe {
+    0% {
+        box-shadow: 0 0 0px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 40px rgb(88, 195, 241);
+    }
+}
+
+@media screen and ( max-width: 840px ) {
+    .coding {
+        width: 95%;
+    }
+
+    .browse_toggle_btn {
+        div {
+            width: 130px;
+        }
+    }
+
+    .semester {
+        .events {
+            div {
+                width: 60%;
+            }
+
+            .left {
+                transform: translateX(calc(-100% - 25px));
+                &::before {
+                    width: 23px;
+                    right: -23px;
+                }
+            }
+
+            .right {
+                transform: translateX(25px);
+                &::before {
+                    width: 29px;
+                    left: -29px;
+                }
+            }
+        }
+    }
+}

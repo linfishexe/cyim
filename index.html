@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index/index.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.150.1/build/three.module.js",
+                "OrbitControls": "https://unpkg.com/three@0.150.1/examples/jsm/controls/OrbitControls.js",
+                "GLTFLoader": "https://unpkg.com/three@0.150.1/examples/jsm/loaders/GLTFLoader.js",
+                "EffectComposer": "https://unpkg.com/three@0.150.1/examples/jsm/postprocessing/EffectComposer.js",
+                "RenderPass": "https://unpkg.com/three@0.150.1/examples/jsm/postprocessing/RenderPass.js",
+                "UnrealBloomPass": "https://unpkg.com/three@0.150.1/examples/jsm/postprocessing/UnrealBloomPass.js",
+                "FontLoader": "https://unpkg.com/three@0.150.1/examples/jsm/loaders/FontLoader.js",
+                "BufferGeometryUtils": "https://unpkg.com/three@0.150.1/examples/jsm/utils/BufferGeometryUtils.js"
+            }
+        }
+    </script>
+    <title>朝陽-資管系學會</title>
+</head>
+<body>
+    <!-- <canvas id="animation_bg" width="1920" height="1080"></canvas> -->
+
+    <nav>
+        <div class="logo"><img src="./img/Logo1.svg" alt="Logo"></div>
+        <div class="logo"><img src="./img/Logo1.svg" alt="Logo" title="資管系學會"></div>
+        <ul>
+            <a href="index.html"><li>首頁</li></a>
+            <a href="Commonality.html"><li>共通性</li>
+            <a href="activity.html"><li>社團活動</li></a>
+        </ul>
+        <div id="side_menu_btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+    <header id="banner"><div class="banner_cover"></div></header>
+    <aside id="side_contents">
+        <div id="side_contents_arrow">></div>
+        <ul>
+            <li><a href="#banner"><span>頁首</span></a></li>
+            <li><a href="#about"><span>本系宗旨</span></a></li>
+            <li><a href="#group_photo"><span>大合照</span></a></li>
+            <li><a href="#cyim_member"><span>成員</span></a></li>
+            <li><a href="#footer"><span>頁尾</span></a></li>
+        </ul>
+    </aside>
+    <aside id="side_menu" style="left: 100vw;">
+        <h2>選單</h2>
+        <ul>
+            <a href="Commonality.html"><li>共通性</li></a>
+                <a class="sub_item" href="Commonality_content.html"><li>組織運作</li></a>
+                <a class="sub_item" href="re_man.html"><li>組織管理</li></a>
+            <hr>
+            <a href="activity.html"><li>社團活動</li></a>
+                <a class="sub_item" href="plan.html"><li>規劃與執行</li></a>
+                <a class="sub_item" href="feature.html"><li>特色與績效</li></a>
+        </ul>
+    </aside>
+
+    <main>
+
+        <section id="about">
+            <h2>本系宗旨</h2>
+            <div class="cards2">
+                
+                <div>
+                    <img src="./img/cooperate.svg" alt="icon">
+                    <article>
+                        <h3>相互合作</h3>
+                        <p>
+                            連絡同學情誼,砥礪學性,學習互助合作
+                        </p>
+                    </article>
+                </div>
+
+                <div>
+                    <img src="./img/about/motivated.svg" alt="icon">
+                    <article>
+                        <h3>學術交流</h3>
+                        <p>
+                            促進學術交流、整合全系發展共識、聯絡師生情誼
+                        </p>
+                    </article>
+                </div>
+
+                <div>
+                    <img src="./img/about/enthusiasm.svg" alt="icon">
+                    <article>
+                        <h3>活動舉辦</h3>
+                        <p>
+                            舉辦各種活動 (康樂性、體育性、學術性、服務性) 
+                        </p>
+                    </article>
+                </div>
+
+                <div>
+                    <img src="./img/推展系務.svg" alt="icon">
+                    <article>
+                        <h3>推展系務</h3>
+                        <p>
+                            協助推展系務、聯繫師生情感、增進會員友誼、建立優良系風
+                        </p>
+                    </article>
+                </div>
+
+                <div>
+                    <img src="./img/橋接器.svg" alt="icon">
+                    <article>
+                        <h3>橋接者</h3>
+                        <p>
+                            成為學生與學校之溝通橋樑,且與全國各相關科系維持良好關係,
+                            共同研究資訊管理相關理論與實務
+
+                        </p>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- <section id="introduction">
+            <h2>特色介紹</h2>
+            <div class="introduction_items">
+                <details>
+                    <summary><h4>關於本站</h4></summary>
+                    <div>
+                        <p>
+                            本站由資管系學會資訊組開發<br>
+                            這是資管系學會的資訊網站<br>
+                            提供了會費生查詢、查詢資料庫、校園地圖等功能 <br>
+                            本站所使用技術包括:
+                            <ul>
+                                <li><img src="./img/introduction/html.svg" alt="Html" title="Html"></li>
+                                <li><img src="./img/introduction/css.svg" alt="CSS" title="CSS"></li>
+                                <li><img src="./img/introduction/javascript.svg" alt="JavaScript" title="JavaScript"></li>
+                                <li><img src="./img/introduction/rwd.svg" alt="RWD" title="RWD"></li>
+                                <li><img src="./img/introduction/php.svg" alt="PHP" title="PHP"></li>
+                                <li><img src="./img/introduction/threejs.svg" alt="Three.js" title="Three.js"></li>
+                            </ul>
+                        </p>
+                    </div>
+                </details>
+                <details>
+                    <summary><h4>查詢資料庫</h4></summary>
+                    <div>
+                        <p>
+                            從這邊可以看到本學年的活動資訊<br>
+                            包括了過去的活動以及未來的活動等<br>
+                            你可以從裡面找到喜歡的活動並查看<br>
+                            <a href=""><button>了解更多</button></a>
+                        </p>
+                    </div>
+                </details>
+                <details>
+                    <summary><h4>會費生查詢</h4></summary>
+                    <div>
+                        <p>
+                            如果是你會費生的話可以到這邊查詢<br>
+                            不確定自己是不是會費生也可以來查看看<br>
+                            如果你發現自己是會費生卻沒在名單上，請聯絡我們<br>
+                            IG: cyim1994<br>
+                            <a href="./memberCheck.html"><button>會費生查詢</button></a>
+                        </p>
+                    </div>
+                </details>
+                <details>
+                    <summary><h4>校園地圖</h4></summary>
+                    <div>
+                        <p>
+                            這是給不熟悉學校的人使用的<br>
+                            只要按下開始就能看到自己目前在學校的位置<br>
+                            也可以當成一般的地圖來查看每一棟的位置<br>
+                            <a href="./cyutmap/scMap.html"><button>了解更多</button></a>
+                        </p>
+                    </div>
+                </details>
+                <details>
+                    <summary><h4>特色資管卡</h4></summary>
+                    <div class="member_card">
+                        <div class="parallax_card_wrap">
+                            <div class="parallax_card"></div>
+                        </div>
+                        <div class="parallax_card_r_wrap">
+                            <div class="parallax_r_card"></div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section> -->
+
+        <section id="group_photo">
+            <h2>大合照</h2>
+            <a href="encryption.php" title="點擊查看人事資料" target="_blank"><img src="./img/系會合照.jpg" alt="系會合照" class="group_photo"></a>
+        </section>
+       
+        <section id="cyim_member">
+            <h2>系會成員</h2>
+            <div class="cards member_cards">
+                <div>
+                    <img src="./img/members/0.jpg" alt="icon">
+                    <article>
+                        <h3>系會長 - 鍾柏霖</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/1.jpg" alt="icon">
+                    <article>
+                        <h3>副會長 - 陳永傑</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/2.jpg" alt="icon">
+                    <article>
+                        <h3>行政執秘 - 黃沐卿</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/3.jpg" alt="icon">
+                    <article>
+                        <h3>財務長 - 詹浣妤</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/4.jpg" alt="icon">
+                    <article>
+                        <h3>攝影長 - 廖利華</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/5.jpg" alt="icon">
+                    <article>
+                        <h3>體育長 - 劉俊彬</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/6.jpg" alt="icon">
+                    <article>
+                        <h3>器材長 - 黃立辰</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/7.jpg" alt="icon">
+                    <article>
+                        <h3>活動執秘 - 林渝暄</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/8.jpg" alt="icon">
+                    <article>
+                        <h3>活動長 - 吳依靜</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/11.jpg" alt="icon">
+                    <article>
+                        <h3>副活動 - 周浩榆</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/9.jpg" alt="icon">
+                    <article>
+                        <h3>公關長 - 曾重元</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/10.jpg" alt="icon">
+                    <article>
+                        <h3>資訊長 - 董柏均</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/12.jpg" alt="icon">
+                    <article>
+                        <h3>文書長 - 周子皓</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/13.jpg" alt="icon">
+                    <article>
+                        <h3>美宣長 - 鍾宇昕</h3>
+                    </article>
+                </div>
+                <div>
+                    <img src="./img/members/14.jpg" alt="icon">
+                    <article>
+                        <h3>副美宣 - 劉正凱</h3>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer id="footer">
+        <section>
+            <div class="info">
+                <h4>單位資訊</h4>
+                <address>
+                    <p>學校: 朝陽科技大學 </p>
+                    <p>單位: 資訊管理系學會</p>
+                    <p>屆數: 第二十九屆 </p>
+                </address>
+            </div>
+            <div id="footer_logo">
+
+            </div>
+            <div class="social_media">
+                <div>
+                    <h4>IG: cyim1994</h4>
+                    <img src="./img/ig.svg" alt="ig">
+                </div>
+            </div>
+        </section>
+        <a class="go_to_driver_a no_fixed" href='https://drive.google.com/drive/u/2/folders/1dxQb5CHvbOLW3S6Ro_OOkq9dOx50wawJ' target="_blank">
+            <div class="go_to_driver"><div class="bg"></div><img src="./img/google-drive.svg" alt="">
+                <span>
+                    在雲端硬碟中顯示
+                </span>
+            </div>
+        </a>
+        <section class="copyright">
+            <p><small>Copyright © 1994-2023 CYIM. All Rights Reserved</small></p>
+        </section>
+    </footer>
+    <div id="loading_cover">
+        <svg id="logo_svg">
+            <g id="logo_dr">
+                <path id="dr-item-4"/>
+                <path id="dr-item-3"/>
+                <path id="dr-item-2"/>
+                <path id="dr-item-1"/>
+            </g>
+            <g id="logo_br">
+                <path id="br-item-4"/>
+                <path id="br-item-3"/>
+                <path id="br-item-2"/>
+                <path id="br-item-1"/>
+            </g>
+        </svg>
+    </div>
+</body>
+<script defer src="./js/loading.js"></script>
+<script defer src="./js/sideContents.js"></script>
+<script defer src="./js/sideMenu.js"></script>
+<script type="module" src="./js/cyimLogo.js"></script>
+<!-- <script src="./js/bg_animation.js"></script> -->
+<script src="./js/parallax_card.js"></script>
+<script>
+const parallax_card = new Parallax_card({
+    element: document.querySelector('.parallax_card_wrap'),
+    tiltEffect: 'reverse',
+    container: document.querySelector('.parallax_card')
+});
+
+const parallax_card_r = new Parallax_card({
+    element: document.querySelector('.parallax_card_r_wrap'),
+    tiltEffect: 'reverse',
+    container: document.querySelector('.parallax_r_card')
+});
+</script>
+</html>

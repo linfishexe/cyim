@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index/index.css">
+    <link rel="stylesheet" href="./style/plan/plen.css">
+    <title>社團活動-規劃與執行</title>
+</head>
+<body>
+
+    <canvas id="animation_bg" width="1920" height="1080"></canvas>
+
+    <!-- 導覽列 -->
+    <nav>
+        <div class="logo"><img src="./img/Logo1.svg" alt="Logo"></div>
+        <div class="logo"><img src="./img/Logo1.svg" alt="Logo" title="資管系學會"></div>
+        <ul>
+            <a href="index.html"><li>首頁</li></a>
+            <a href="Commonality.html"><li>共通性</li>
+            <a href="activity.html"><li>社團活動</li></a>
+        </ul>
+    </nav>
+
+    <!-- 側邊導覽列( 手機板導覽列 ) -->
+    <aside id="side_menu" style="left: 100vw;">
+        <h2>選單</h2>
+        <ul>
+            <a href="Commonality.html"><li>共通性</li></a>
+                <a class="sub_item" href="Commonality_content.html"><li>組織運作</li></a>
+                <a class="sub_item" href="re_man.html"><li>組織管理</li></a>
+            <hr>
+            <a href="activity.html"><li>社團活動</li></a>
+                <a class="sub_item" href="plan.html"><li>規劃與執行</li></a>
+                <a class="sub_item" href="feature.html"><li>特色與績效</li></a>
+        </ul>
+    </aside>
+
+    <!-- 主要內容 -->
+    <main class="no_bg_main">
+
+        <!-- 時間軸 -->
+        <div class="timeline" style="display: none;"></div>
+
+        <h2 class="bg_h2">規劃與執行</h2>
+        <section class="coding">
+            <h3>活動會議資料編碼</h3>
+
+            <p class="coding_ex">
+                <span>111</span> 
+                <span>06</span> 
+                <span>1</span>
+                <span>1</span>
+                <span>01</span>
+            </p>
+
+            <div class="coding_detial">
+                <table>
+                    <tr>
+                        <td><div></div></td>
+                        <td>學年度</td>
+                    </tr>
+                    <tr>
+                        <td><div></div></td>
+                        <td>活動議會編號種類</td>
+                    </tr>
+                    <tr>
+                        <td><div></div></td>
+                        <td>第幾次活動</td>
+                    </tr>
+                    <tr>
+                        <td><div></div></td>
+                        <td>活動會議類別 代碼1:籌備會議 代碼2:活動會議 代碼3:檢討會議
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div></div></td>
+                        <td>次數</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p>
+                範例: 111學年度第五個活動的第一次檢討會議
+                <span>111</span>
+                <span>06</span>
+                <span>5</span>
+                <span>3</span>
+                <span>01</span>
+            </p>
+        </section>
+
+        <!-- 上學期 -->
+        <section class="semester spring_semester" style="display: none;">
+            <!-- <h3 class="plan_frist">上學期</h3> -->
+            
+            <section class="events">
+
+                <div data-time="2022/09/06" class="meeting right">
+                    <a href="admission.html">
+                        <article>
+                            <h3>新生訓練</h3>
+                        </article>
+                    </a>
+                </div>
+                <div data-time="2023/09/13" class="meeting left" >
+                    <a href="./Ombudsman_meeting.php?meeting_id=2">
+                        <article>
+                            <h3>監委會議 - 宿營預算審核</h3>
+                        </article>
+                    </a>
+                </div>
+                
+                <div data-time="2022/09/24~2022/09/25"  class="event right">
+                    <a href="./camping.html">
+                        <article>
+                            <h3>新生宿營<br>休騰騰欸幸福資味</h3>
+                        </article>
+                    </a>
+                </div>
+                
+                <!--------------------------------->
+                <div data-time="2022/10/10" class="meeting left">
+                    <a href="./Ombudsman_meeting.php?meeting_id=3">
+                        <article>
+                            <h3>監委會議- 茶會預算審核</h3>
+                        </article>
+                    </a>
+                </div>
+                
+                <div data-time="2022/10/16"  class="event right">
+                    <a href="./tea_party.html">
+                        <article>
+                            <h3>新生茶會</h3>
+                        </article>
+                    </a>         
+                </div>
+                
+                <!--------------------------------->
+                <div data-time="2022/10/31" class="meeting left">
+                    <a href="./Ombudsman_meeting.php?meeting_id=4">
+                        <article>
+                            <h3>監委會議- 聖誕晚會預算審核</h3>
+                        </article>
+                    </a>
+                </div>
+                <div data-time="2022/11/22" class="event right">
+                    <a href="member_meeting.html">
+                        <article>
+                            <h3>系主任時間</h3>
+                        </article>
+                    </a>
+                </div>
+                <!--------------------------------->
+                <div data-time="2022/11/29" class="event right">
+                    <a href="https://drive.google.com/drive/folders/1y0MHofBdeUF_xRuiKVYdnEvTXxirWJzZ?usp=share_link">
+                        <article>
+                            <h3>合唱比賽</h3>
+                        </article>
+                    </a>
+                </div>
+                
+                <div data-time="2022/12/14" class="event right">
+                    <a href="Christmas.html">
+                        <article>
+                            <h3>聖誕轟八!<br>誕哩來</h3>
+                        </article>
+                    </a>
+                </div>
+                <!--------------------------------->
+                <div data-time="2022/12/21" class="meeting left">
+                    <a href="./Ombudsman_meeting.php?meeting_id=5">
+                        <article>
+                            <h3>監委會議- 期末歐趴糖預算審核</h3>
+                        </article>
+                    </a>
+                </div>
+                
+                <div data-time="2022/12/26"  class="event right">
+                    <a href="AllPass1.html">
+                        <article>
+                            <h3>期末歐趴糖</h3>
+                        </article>
+                    </a>
+                </div>
+                <!--------------------------------->
+            </section>
+
+        </section>
+
+        <!-- 下學期 -->
+        <section class="semester fall_semester" style="display: none;">
+
+            <!-- <h3 class="plan_frist">下學期</h3> -->
+
+            <section class="events">
+                <div data-time="2023/02/21" class="meeting left">
+                    <a href="./Ombudsman_meeting.php?meeting_id=6">
+                        <article>
+                            <h3>監委會議 - 系烤聯誼預算審核</h3>
+                        </article>
+                    </a>
+                </div>
+                <div data-time="2023/03/01" class="meeting left">
+                    <a href="./Ombudsman_meeting.php?meeting_id=7">
+                        <article>
+                            <h3>監委會議 - 制服日預算審核</h3>
+                        </article>
+                    </a>
+                </div>
+                <div data-time="2023/03/11"  class="event right">
+                    <a href="./Roast.html">
+                        <article>
+                            <h3>系烤聯誼-機遇</h3>
+                        </article>
+                    </a>
+                </div>
+                <!--------------------------------->
+                <div data-time="2023/03/14"  class="event right">
+                    <a href="./member_meeting.html">
+                        <article>
+                            <h3>系主任時間</h3>
+                        </article>
+                    </a>
+                </div>
+                <!--------------------------------->
+                
+                <div data-time="2023/03/21"  class="event right">
+                    <a href="https://drive.google.com/drive/folders/1LWCKt_-A-qIZc_xf4-olRzmzRj0ruLke?usp=share_link">
+                        <article>
+                            <h3>大人物制服日(停辦)</h3>
+                        </article>
+                    </a>
+                </div>
+                <!--------------------------------->
+                <div data-time="2023/03/22" class="meeting left">
+                    <a href="./Ombudsman_meeting.php?meeting_id=9">
+                        <article>
+                            <h3>監委會議- 資訊週預算審核</h3>
+                        </article>
+                    </a>
+                </div>
+                <div data-time="2023/05/01~2023/05/05"  class="event right">
+                    <a href="bigdata.html">
+                        <article>
+                            <h3>大人物資訊週</h3>
+                        </article>
+                    </a>
+                </div>
+                <div data-time="2023/5/19"  class="event right">
+                    <a href="https://drive.google.com/drive/folders/14aUbxqqObvP46s-upLhEFc67sDV0ZPt_?usp=drive_link">
+                        <article>
+                            <h3>期末演唱會(停辦)</h3>
+                        </article>
+                    </a>
+                </div>
+                <!--------------------------------->
+                <!-- <div data-time="2023/01/01" class="meeting left">
+                    <a href="">
+                        <article>
+                            <h3>監委會議 - 期末歐趴預算審核</h3>
+                        </article>
+                    </a>
+                </div> -->
+                <!--------------------------------->
+                <div data-time="2023/5/23" class="meeting left">
+                    <a href="">
+                        <article>
+                            <h3>監委會議- 保齡球交流會預算審核(尚未上傳)</h3>
+                        </article>
+                    </a>
+                </div>
+                <div data-time="2023/06/05"  class="event right">
+                    <a href="https://drive.google.com/drive/folders/1dWTDCC5eKSJx_fy1qIAYvl_IoqesrwkX?usp=share_link">
+                        <article>
+                            <h3>保齡球交流賽</h3>
+                        </article>
+                    </a>
+                </div>
+                <!--------------------------------->
+                <div data-time="2023/06/09"  class="event right">
+                    <a href="https://drive.google.com/drive/folders/143OnyrLj9cz7GxTt0iQAsG01_OGvincJ?usp=drive_link">
+                        <article>
+                            <h3>期末歐趴糖</h3>
+                        </article>
+                    </a>
+                </div>
+            </section>
+        </section>
+
+        <!-- 切換按鈕 -->
+        <div class="browse_toggle_btn">
+            <div class="spring_semester_btn">上學期活動</div>
+            <div class="fall_semester_btn">下學期活動</div>
+        </div>
+    </main>
+
+    <!-- 麵包屑 ( 瀏覽路徑 ) -->
+    <div id="bread_crumbs">
+        <a href="index.html"><div>首頁</div></a>
+        <a href="activity.html"><div>社團活動</div></a>
+        <a href="plan.html" class="current_bread_crumb"><div>規劃與執行</div></a>
+    </div>
+
+</body>
+<script defer src="./js/sideMenu.js"></script>
+<script src="./js/bg_animation.js"></script>
+<script>
+
+const timeline = document.querySelector('.timeline');
+const spring_semester = document.querySelector('.spring_semester');
+const fall_semester = document.querySelector('.fall_semester');
+const spring_semester_btn = document.querySelector('.spring_semester_btn');
+const fall_semester_btn = document.querySelector('.fall_semester_btn');
+const browse_toggle_btn = document.querySelector('.browse_toggle_btn');
+const coding = document.querySelector('.coding');
+
+spring_semester_btn.addEventListener('click', () => {
+    timeline.style.display = 'block';
+    browse_toggle_btn.style.animation = 'unset';
+    spring_semester.style.display = 'block';
+    fall_semester.style.display = 'none';
+    coding.style.display = 'none';
+    document.documentElement.scrollTop = 0;
+    
+});
+
+fall_semester_btn.addEventListener('click', () => {
+    timeline.style.display = 'block';
+    browse_toggle_btn.style.animation = 'unset';
+    spring_semester.style.display = 'none';
+    fall_semester.style.display = 'block';
+    coding.style.display = 'none';
+    document.documentElement.scrollTop = 0;
+});
+
+</script>
+</html>

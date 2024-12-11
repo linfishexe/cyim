@@ -1,0 +1,42 @@
+@import '../_reset';
+@import '../_variable';
+@import '../_base';
+@import '../_components';
+
+#check_warp{
+    width: 350px;
+    border: 1px solid #777;
+    background: #26263c;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 10px;
+    color: #fff;
+    button {
+        @include h-ccenter;
+        margin-top: 30px;
+    }
+    h4 { text-align: center; margin-top: 15px; }
+    h5 { text-align: center; color: rgb(245, 151, 151); margin-top: 30px; }
+    input { margin-top: 60px; }
+    table {
+        width: 100%;
+        margin-top: 30px;
+        tr{
+            td{ 
+                height: 40px;
+                text-align: center; 
+                line-height: 40px;
+                border: 1px solid #777;
+            }
+            th{ 
+                height: 40px;
+                text-align: center; 
+                background: rgb(1, 90, 145);
+                line-height: 40px;
+                border: 1px solid #777;
+            }
+        }
+    }
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index/index.css">
+    <link rel="stylesheet" href="./style/member_meeting/member_meeting.css">
+    <title>社團活動-系主任時間</title>
+</head>
+<body>
+
+    <canvas id="animation_bg" width="1920" height="1080"></canvas>
+
+    <nav>
+        <div class="logo"><img src="./img/Logo1.svg" alt="Logo"></div>
+        <div class="logo"><img src="./img/Logo1.svg" alt="Logo" title="資管系學會"></div>
+        <ul>
+            <a href="index.html"><li>首頁</li></a>
+            <a href="Commonality.html"><li>共通性</li>
+            <a href="activity.html"><li>社團活動</li></a>
+        </ul>
+        <div id="side_menu_btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+    <aside id="side_menu" style="left: 100vw;">
+        <h2>選單</h2>
+        <ul>
+            <a href="Commonality.html"><li>共通性</li></a>
+                <a class="sub_item" href="Commonality_content.html"><li>組織運作</li></a>
+                <a class="sub_item" href="re_man.html"><li>組織管理</li></a>
+            <hr>
+            <a href="activity.html"><li>社團活動</li></a>
+                <a class="sub_item" href="plan.html"><li>規劃與執行</li></a>
+                <a class="sub_item" href="feature.html"><li>特色與績效</li></a>
+        </ul>
+    </aside>
+
+    <main>
+
+        <section id="member_meeting_intro">
+            <h2>系主任時間</h2>
+            <p class="member_meeting_intro">
+                本系會員大會是合併系主任時間一同舉辦，<br>本屆考量此活動與社員大會性質一致，今年經討論後決定也合併一同舉辦。<br>
+                111學年度系主任時間分別是<br>
+                --- 111/11/22 && 112/03/14 ---
+            </p>
+        </section>
+        
+        <section class="img_ring">
+            <div id="drag-contenter">
+                <div id="spin-contenter">
+                    <img src="./img/系主任時間_1122_1.jpg" alt="">
+                    <img src="./img/系主任時間_1122_2.jpg" alt="">
+                    <img src="./img/系主任時間_1122_3.jpg" alt="">
+                    <img src="./img/系主任時間_1122_4.jpg" alt="">
+                    <img src="./img/系主任時間_1122_5.jpg" alt="">
+                </div>
+                <!-- <div id="ground"></div> -->
+            </div>
+        </section>
+
+        <div class="event_infor">
+            <p>系主任時間</p>
+            <a class="go_to_driver_a no_fixed" href='https://drive.google.com/drive/folders/11Tcojt5HLUeUdmZYFnOSx-5iCenvjL0A?usp=share_link' target="_blank">
+                <div class="go_to_driver"><div class="bg"></div><img src="./img/google-drive.svg" alt="">
+                    <span>
+                        在雲端硬碟中顯示
+                    </span>
+                </div>
+            </a>
+        </div>
+
+    </main>
+
+    <div id="bread_crumbs">
+        <a href="index.html"><div>首頁</div></a>
+        <a href="Commonality.html"><div>共通性</div></a>
+        <a href="Commonality_content.html"><div>組織運作</div></a>
+        <a href="member_meeting.html" class="current_bread_crumb"><div>系主任時間</div></a>
+    </div>
+
+</body>
+<script defer src="./js/sideContents.js"></script>
+<script defer src="./js/sideMenu.js"></script>
+<script src="./js/bg_animation.js"></script>
+<script>
+
+    class Image_ring {
+        constructor (
+            {
+                radius,
+                rotateSpeed,
+                isAutoRotate,
+                isUseExpandAnimation,
+                imgWidth,
+                imgHeight,
+                odragElement,
+                ospinElement,
+            }
+        ) {
+            this.radius =       radius       || 500;
+            this.rotateSpeed =  rotateSpeed  || -60;
+            this.isAutoRotate = isAutoRotate || true;
+            this.isUseExpandAnimation = isUseExpandAnimation || false
+            this.imgWidth =     imgWidth     || 500;
+            this.imgHeight =    imgHeight    || 500;
+            this.odrag =        odragElement || document.getElementById('drag-contenter');
+            this.ospin =        ospinElement || document.getElementById('spin-contenter');
+            this.aImg
+        }
+    }
+    
+    var radius = 500;
+    var autoRotate = true;
+    var isUseExpandAnimation = false;
+    var rotateSpeed = -60;
+    var imgWidth = 500;
+    var imgHeight = 350;
+    setTimeout(init, 0);
+    var odrag = document.getElementById('drag-contenter');
+    var ospin = document.getElementById('spin-contenter');
+    var aImg = ospin.getElementsByTagName('img');
+    var aEle = [...aImg];
+    ospin.style.width = imgWidth + "px";
+    ospin.style.height = imgHeight + "px";
+    
+    function init( delaytTime ) {
+        for(let i = 0 ; i < aEle.length; i++){
+            aEle[i].style.transform = "rotateY(" + (i * (360 / aEle.length)) + "deg) translateZ(" + radius + "px";
+            if( isUseExpandAnimation ) {
+                aEle[i].style.transition = "transform 0.7s";
+                aEle[i].style.transitionDelay = delaytTime || (aEle.length - i) / 4 + "s";
+            }
+        }
+    }
+    function applyTranform( obj ) {
+        if(ty > 180) ty = 180;
+        if(ty < 0) ty = 0;
+        obj.style.transform = "rotateX(" + (-ty) + "deg) rotateY(" + (tx) + "deg)";
+    }
+    function playSpin( yes ) {
+        ospin.style.animationPlayState = (yes?'running':'paused');
+    }
+    var sX, sY, nX, nY, desX = 0,
+        desY = 0,
+        tX = 0,
+        tY = 10;
+    
+    if ( autoRotate ) {
+        var animationName = (rotateSpeed > 0 ? 'spin' : 'spinRevert');
+        console.log(animationName);
+        ospin.style.animation = `${animationName} ${Math.abs(rotateSpeed)}s infinite linear`;
+    }
+    
+    </script>
+</html>

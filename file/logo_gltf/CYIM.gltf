@@ -1,0 +1,265 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 2796,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 805,
+      "max": [
+        4.01759719848633,
+        9.1055154800415,
+        1.01455307006836
+      ],
+      "min": [
+        -4.01759767532349,
+        -0.0779304504394531,
+        -1.01455295085907
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 805,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 805,
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "generator": "Substance Painter 6.1.3",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 11184,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 9660,
+      "byteOffset": 11184,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 9660,
+      "byteOffset": 20844,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 6440,
+      "byteOffset": 30504,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 36944,
+      "uri": "CYIM.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "blinn1_baseColor.png"
+    },
+    {
+      "uri": "blinn1_occlusionRoughnessMetallic.png"
+    },
+    {
+      "uri": "blinn1_normal.png"
+    },
+    {
+      "uri": "blinn1_emissive.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "OPAQUE",
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissiveTexture": {
+        "index": 3
+      },
+      "name": "blinn1",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "polySurface20",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 2,
+            "POSITION": 1,
+            "TEXCOORD_0": 3
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1,
+        2,
+        11,
+        20
+      ],
+      "name": "RootNode"
+    },
+    {
+      "name": "polySurface1"
+    },
+    {
+      "children": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "name": "polySurface4"
+    },
+    {
+      "name": "polySurface12"
+    },
+    {
+      "name": "polySurface13"
+    },
+    {
+      "name": "polySurface14"
+    },
+    {
+      "name": "polySurface15"
+    },
+    {
+      "name": "polySurface16"
+    },
+    {
+      "name": "polySurface17"
+    },
+    {
+      "name": "polySurface18"
+    },
+    {
+      "name": "polySurface19"
+    },
+    {
+      "children": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "name": "polySurface12"
+    },
+    {
+      "name": "polySurface20"
+    },
+    {
+      "name": "polySurface21"
+    },
+    {
+      "name": "polySurface22"
+    },
+    {
+      "name": "polySurface23"
+    },
+    {
+      "name": "polySurface24"
+    },
+    {
+      "name": "polySurface25"
+    },
+    {
+      "name": "polySurface26"
+    },
+    {
+      "name": "polySurface27"
+    },
+    {
+      "children": [
+        21
+      ],
+      "name": "polySurface20"
+    },
+    {
+      "mesh": 0,
+      "name": "polySurface20"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9985,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    }
+  ]
+}

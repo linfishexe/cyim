@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index/index.css">
+    <title>29資管-社團活動</title>
+</head>
+<body>
+
+    <canvas id="animation_bg" width="1920" height="1080"></canvas>
+    
+    <nav>
+        <div class="logo"><img src="./img/Logo1.svg" alt="Logo"></div>
+        <div class="logo"><img src="./img/Logo1.svg" alt="Logo" title="資管系學會"></div>
+        <ul>
+            <a href="index.html"><li>首頁</li></a>
+            <a href="Commonality.html"><li>共通性</li>
+            <a href="activity.html"><li>社團活動</li></a>
+        </ul>
+        <div id="side_menu_btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <aside id="side_menu" style="left: 100vw;">
+        <h2>選單</h2>
+        <ul>
+            <a href="Commonality.html"><li>共通性</li></a>
+                <a class="sub_item" href="Commonality_content.html"><li>組織運作</li></a>
+                <a class="sub_item" href="re_man.html"><li>組織管理</li></a>
+            <hr>
+            <a href="activity.html"><li>社團活動</li></a>
+                <a class="sub_item" href="plan.html"><li>規劃與執行</li></a>
+                <a class="sub_item" href="feature.html"><li>特色與績效</li></a>
+        </ul>
+    </aside>
+
+    <main class="no_bg_main">
+        <h2>目錄Content</h2>
+        <section class="cards">
+            <a href="./plan.html">
+                <div>
+                    <img src="./img/plan.svg" alt="icon">
+                    <article>
+                        <h3>規劃與執行</h3>
+                    </article>
+                </div>
+            </a>
+            <a href="./feature.html">
+                <div>
+                    <img src="./img/feature.svg " alt="icon">
+                    <article>
+                        <h3>特色與績效</h3>
+                    </article>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <div id="bread_crumbs">
+        <a href="index.html"><div>首頁</div></a>
+        <a href="activity.html" class="current_bread_crumb"><div>社團活動</div></a>
+    </div>
+
+
+
+</body>
+<script defer src="./js/sideMenu.js"></script>
+<script src="./js/bg_animation.js"></script>
+</html>

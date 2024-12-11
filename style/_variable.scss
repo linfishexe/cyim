@@ -1,0 +1,25 @@
+$font-family: '微軟正黑體','Open Sans', sans-serif;
+
+$font-size1: 2rem;
+$font-size2: 1.8rem;
+$font-size3: 1.6rem;
+$font-size4: 1.4rem;
+$font-size5: 1.2rem;
+$font-size6: 1rem;
+$font-size7: 0.8rem;
+
+$error-color: rgb(200, 0, 0);
+$button1-BGcolor: rgb(0, 100, 200);
+$button1-hoverBGcolor: rgb(0, 128, 255);
+$button1-color: rgb(255, 255, 255);
+
+@mixin h-ccenter {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin global-ccenter {
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+}
